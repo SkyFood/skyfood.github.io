@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title></title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="menu_open">
+	    <i></i>
+	    <i></i>
+	    <i></i>
+	</div>
+	<div class="nav">
+	    <ul class="nav_ul clearfix">
+	        <li class="nav_item active"><a href="###">首页</a></li>
+	        <li class="nav_item"><a href="javascript:;">公司简介</a><i></i>
+	            <ul class="nav_item_open">
+	                <li class="subopen"><a href="javascript:;">公司简介</a></li>
+	                <li class="nav_item2"><a href="###">公司简介</a></li>
+	                <li class="nav_item2"><a href="###">组织架构</a></li>
+	                <li class="nav_item2"><a href="###">服务流程</a></li>
+	            </ul>
+	        </li>
+	        <li class="nav_item "><a href="javascript:;">新闻动态</a><i></i>
+	            <ul class="nav_item_open">
+	                <li class="subopen"><a href="javascript:;">新闻动态</a></li>
+	                <li class="nav_item2"><a href="###">公司动态</a></li>
+	                <li class="nav_item2"><a href="###">行业动态</a></li>
+	            </ul>
+	        </li>
+	        <li class="nav_item"><a href="###">产品中心</a><i></i>
+	            <ul class="nav_item_open">
+	                <li class="subopen"><a href="javascript:;">产品中心</a></li>
+	                <li class="nav_item2"><a href="###">产品一</a></li>
+	                <li class="nav_item2"><a href="###">产品二</a></li>
+	                <li class="nav_item2"><a href="###">产品三</a></li>
+	                <li class="nav_item2"><a href="###">产品四</a></li>
+	                <li class="nav_item2"><a href="###">产品五</a></li>
+	                <li class="nav_item2"><a href="###">产品六</a></li>
+	                <li class="nav_item2"><a href="###">产品七</a></li>
+	            </ul>
+	        </li>
+	        <li class="nav_item"><a href="###">成功案例</a></li>
+	        <li class="nav_item"><a href="###">荣誉资质</a></li>
+	        <li class="nav_item"><a href="###">联系我们</a></li>
+	    </ul>
+	</div>
+	<div class="hcover"></div>
+	
+
+	<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script>
+		$(function () {
+		    $(".menu_open").click(function () {
+		        $(".nav").animate({ 'left': '0' }, 400);
+		        $(".hcover").animate({ 'right': '0' }, 400);
+		    });
+		    $(".hcover").click(function () {
+		        $(this).animate({ 'right': '-50%' }, 400);
+		        $(".nav").animate({ 'left': '-50%' }, 400);
+		        $(".nav_ul").animate({ 'left': '0' }, 400);
+		        $('.nav_item_open').css('left', '-50%');
+		    });
+		    $(".nav_item i").click(function () {
+		        $(".nav_ul").animate({ 'left': '-100%' }, 400);
+		        $(this).next('.nav_item_open').css('left', '0');
+		    });
+		    $(".subopen").click(function () {
+		        $(this).parent('.nav_item_open').css('left', '-50%');
+		        $(".nav_ul").animate({ 'left': '0' }, 400);
+		    });
+		});
+	</script>
+</body>
+</html>
