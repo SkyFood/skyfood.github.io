@@ -3,13 +3,13 @@ jQuery.fn.banner = function () {
     var container = $(this);
 
     //设置loop 默认为 false  如果 loop为true, 可以无缝滚动
-    var loop = true;
+    var loop = false;
 
     //切换的时间 默认300
     var speed = 300;
 
     //自动切换
-    var autoplay;
+    var autoplay = 5000;
 
     // 做自动切换时的一个标记
     var flag = false;
@@ -63,7 +63,13 @@ jQuery.fn.banner = function () {
             }
         }
         items.width(w);
-        timer = setInterval( moveNext, autoplay)
+        if( autoplay ){
+            if( typeof autoplay !== 'number' ){
+                console.log("autoplayb必须设置为number")
+            }else {
+                timer = setInterval( moveNext, autoplay);
+            }
+        }
     })
 
     //loop为true .swiper-slide全部复制一份
@@ -115,7 +121,6 @@ jQuery.fn.banner = function () {
     //设置全局变量n 记录切换次数
     var n = 0;
     var m = 0;
-    var j = 0;
 
     //切换动画用css transform 来做，性能更好一些
 
