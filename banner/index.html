@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>banner切换</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .swiper-container {
+            width: 100%;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+            -webkit-user-select: none;  
+            -moz-user-select: none;  
+            -ms-user-select: none; 
+        }
+        .swiper-wrapper {
+            overflow: hidden;
+            width: 9999999px; /* 这个是个很巧妙的点 可以删掉试试 */
+            transform: translate3d(0,0,0);
+
+        }
+        .swiper-button-prev, .swiper-button-next {
+            width: 28px;
+            height: 48px;
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            margin-top: -24px;
+        }
+        .swiper-button-prev {
+            background: url('./images/prev.png') no-repeat center;
+            left: 10px;
+        }
+        .swiper-button-next {
+            background: url('./images/next.png') no-repeat center;
+            right: 10px;
+        }
+
+        .swiper-pagination {
+            width: 100%;
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            z-index: 10;
+            text-align: center;
+        }
+
+        .swiper-button-disabled {
+            opacity: .35;
+            cursor: auto;
+        }
+
+        .swiper-pagination-bullet {
+            width: 8px;
+            height: 8px;
+            display: inline-block;
+            border-radius: 100%;
+            background: #fff;
+            opacity: .2;
+            margin: 0 5px;
+        }
+        .swiper-pagination-bullet-active {
+            opacity: 1;
+            background: #007aff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="./images/banner01.jpg">
+            </div>
+            <div class="swiper-slide">
+                <img src="./images/banner02.jpg">
+            </div>
+            <div class="swiper-slide">
+                <img src="./images/banner03.jpg">
+            </div>
+        </div>
+        <div class="swiper-pagination">
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+
+
+    <script type="text/javascript" src="js/jquery.min.1.10.2.js"></script>
+    <script type="text/javascript" src="js/jquery.banner.js"></script>
+    <script>
+    $('.swiper-container').banner();
+    </script>
+</body>
+
+</html>
