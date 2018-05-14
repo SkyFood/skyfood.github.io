@@ -63,6 +63,7 @@ jQuery.fn.banner = function () {
             }
         }
         items.width(w);
+        
         if( autoplay ){
             if( typeof autoplay !== 'number' ){
                 console.log("autoplayb必须设置为number")
