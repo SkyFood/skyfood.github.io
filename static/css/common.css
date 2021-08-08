@@ -1,0 +1,20 @@
+/*common.css*/
+page {
+  min-height: 100%;
+  background-color: #FFFFFF;
+  font-size: 14px;
+  color: #333;
+	height:auto;
+}
+
+view,
+button,
+text {
+  box-sizing: border-box;
+}
+
+/* #ifdef H5 */
+uni-page-head {
+  /* display: none; */
+}
+/* #endif */
